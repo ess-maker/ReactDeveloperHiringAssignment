@@ -6,7 +6,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const store = configureStore({
   reducer: {
-  cars: fetchProductReducer,
+  courses: fetchProductReducer,
   selectedNum:selectednumber,
   shearchvalue:shearchvalue
   },

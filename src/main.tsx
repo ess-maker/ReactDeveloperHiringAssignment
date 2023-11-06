@@ -7,10 +7,11 @@ import {
   useParams,
   } from "react-router-dom";
 import Navbar from './components/navbar/Navbar';
-import Boxcar from './components/carbox/Boxcar';
+import Courses_List from './components/Courses_List/Courseslist';
 import Scroolpages from './components/pages/Scroolpages';
 import { Provider} from 'react-redux';
 import store from './store/store';
+import Errpage from './components/shered/Errpage';
 
 const AppLayout = () => {
   const { pageNumber } = useParams();
@@ -18,7 +19,7 @@ const AppLayout = () => {
   return (
     <div className="App">
       <Navbar />
-      {pageNumber ? <Outlet /> : <Boxcar />}
+      {pageNumber ? <Outlet /> : <Courses_List />}
       <Scroolpages />
     </div>
   );
@@ -26,8 +27,9 @@ const AppLayout = () => {
 
 const router = createBrowserRouter([
   {path:"/",element:<AppLayout />,
+  errorElement:<Errpage />,
 children:[
-  {path:`:pageNumber` , element:<Boxcar />}
+  {path:`:pageNumber` , element:<Courses_List />}
 ]},
 ]);
 
