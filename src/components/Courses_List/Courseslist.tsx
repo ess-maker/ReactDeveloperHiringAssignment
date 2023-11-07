@@ -9,7 +9,10 @@ import Course_card from "./Course_card";
 const Courseslist: FC = () => {
   const courses = useSelector((state: RootState) => state.courses.data);
   const loadingState = useSelector((state: RootState) => state.courses.loading);
+  const searchValue =  useSelector((state: RootState) => state.shearchvalue);
 
+  console.log(searchValue);
+  
   
   const dispatch: AppDispatch = useAppDispatch();
   
@@ -22,12 +25,10 @@ const Courseslist: FC = () => {
   if (loadingState) return <Loding />;
   return (
     <section className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0 py-5" >
-      {courses.map((course: courses_type, index: number) => (
+      {courses.filter((course: courses_type) =>  course.instructor.toLowerCase().startsWith(searchValue)
+       ).map((course: courses_type) => (
         <Course_card 
-        key={index}
-        courseName={course.courseName}
-        instructor={course.instructor}
-        enrollmentStatus={course.enrollmentStatus}  />
+          course={course} />
         ))}
         </section>
   );

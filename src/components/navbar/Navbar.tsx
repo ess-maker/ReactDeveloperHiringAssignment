@@ -1,6 +1,4 @@
 import { FC } from "react"
-import assest from "../../assets/imges"
-import Input from "../shered/Input"
 import "../../index.scss"
 import { useDispatch } from "react-redux"
 import { setshearchvalue } from "../../store/shearchvalue"
@@ -17,7 +15,7 @@ const Navbar:FC = () => {
   
   return (
   <nav className={`w-full py-3 h-16 px-4 shadow-2xl rounded-lg bg-scondary ${styles.flexitems} justify-between gap-6`}>
-  <Input onchange = {() => handleInputChange} type = "text"  img = {assest.shearch} placeholder = "Search..." />
+    <input className=" focus:outline-2 focus:outline-Gray focus:duration-200 rounded-xl py-2 px-2 w-[14rem] text-Gray font-medium text-sm" type="text" placeholder="Search..." onChange={(e) => handleInputChange(e.target.value)}/>
   <Userinfo />
   </nav>
   )

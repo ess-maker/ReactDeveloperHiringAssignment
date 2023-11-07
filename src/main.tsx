@@ -8,10 +8,11 @@ import {
   } from "react-router-dom";
 import Navbar from './components/navbar/Navbar';
 import Courses_List from './components/Courses_List/Courseslist';
-import Scroolpages from './components/pages/Scroolpages';
 import { Provider} from 'react-redux';
 import store from './store/store';
 import Errpage from './components/shered/Errpage';
+import Coursepage from './components/Courses_List/Coursepage/Coursepage';
+import Dashbord from './components/userdashbord/Dashbord';
 
 const AppLayout = () => {
   const { pageNumber } = useParams();
@@ -20,7 +21,6 @@ const AppLayout = () => {
     <div className="App">
       <Navbar />
       {pageNumber ? <Outlet /> : <Courses_List />}
-      <Scroolpages />
     </div>
   );
 };
@@ -29,8 +29,9 @@ const router = createBrowserRouter([
   {path:"/",element:<AppLayout />,
   errorElement:<Errpage />,
 children:[
-  {path:`:pageNumber` , element:<Courses_List />}
+  {path:`:pageNumber` , element:<Coursepage />}
 ]},
+{path:'dashbord' , element:<Dashbord />}
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
