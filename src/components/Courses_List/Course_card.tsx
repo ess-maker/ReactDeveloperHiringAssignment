@@ -3,7 +3,7 @@ import Icon from "../shered/Icon"
 import Button_click from "../shered/Button_click";
 import { courses_type } from "../../hooks/types";
 
-const Course_card = (course:courses_type) => {
+const Course_card = ({course}:{course:courses_type}) => {
   const Navigate = useNavigate();
 
   return (
