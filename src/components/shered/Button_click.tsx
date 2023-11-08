@@ -1,6 +1,5 @@
 const Button_click = ({value , bgcolor ,completed , w_full  , handelclick , toggol } :
-   {value:string , bgcolor:string , w_full?:boolean , completed?:boolean ,
-     toggol?:boolean , handelclick?:() => void}) => {
+   {value:string , bgcolor:string , w_full?:boolean | undefined , completed?:boolean | undefined ,toggol?:boolean | undefined , handelclick?:() => void }) => {
 
   
   return (

@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import fetchProductReducer from './fetchproduct';
-import selectednumber from './selectednumber';
 import shearchvalue  from './shearchvalue';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const store = configureStore({
   reducer: {
   courses: fetchProductReducer,
-  selectedNum:selectednumber,
   shearchvalue:shearchvalue
   },
 });
