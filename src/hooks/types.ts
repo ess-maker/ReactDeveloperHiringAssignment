@@ -32,6 +32,7 @@ export type courses_type = {
     schedule: string,
     location:string,
     Enrolled:boolean,
+    completed:boolean,
     prerequisites: string[],
     syllabus:syllabus_types,
     students:students_types

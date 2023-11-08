@@ -1,101 +1,131 @@
 {
-    "courses": [
+  "courses": [
+    {
+      "id": 1,
+      "courseName": "Introduction to React Native",
+      "instructor": "John Doe",
+      "description": "Learn the basics of React Native development and build your first mobile app.",
+      "enrollmentStatus": "Open",
+      "thumbnail": "https://udemy-images.udemy.com/course/480x270/1321548_ce0c.jpg",
+      "duration": "8 weeks",
+      "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
+      "location": "Online",
+      "Enrolled": true,
+      "completed": true,
+      "prerequisites": [
+        "Basic JavaScript knowledge",
+        "Familiarity with React"
+      ],
+      "syllabus": [
         {
-            "id": 1,
-            "courseName": "Introduction to React Native",
-            "instructor": "John Doe",
-            "description": "Learn the basics of React Native development and build your first mobile app.",
-            "enrollmentStatus": "Open",
-            "thumbnail": "https://udemy-images.udemy.com/course/480x270/1321548_ce0c.jpg",
-            "duration": "8 weeks",
-            "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
-            "location": "Online",
-            "Enrolled":false,
-            "prerequisites": ["Basic JavaScript knowledge", "Familiarity with React"],
-            "syllabus": [
-                { "week": 1, "topic": "Introduction to React Native", 
-                "content": "Overview of React Native, setting up your development environment." },
-                { "week": 2, "topic": "Building Your First App", 
-                "content": "Creating a simple mobile app using React Native components." }
-            ],
-            "students": [
-                { "id": 101, "name": "Alice Johnson", "email": "alice@example.com" },
-                { "id": 102, "name": "Bob Smith", "email": "bob@example.com" }
-            ]
+          "week": 1,
+          "topic": "Introduction to React Native",
+          "content": "Overview of React Native, setting up your development environment."
         },
         {
-            "id": 2,
-            "name": "Advanced React Native Techniques",
-            "instructor": "Jane Smith",
-            "description": "Master advanced techniques in React Native for building powerful mobile applications.",
-            "enrollmentStatus": "Open",
-            "thumbnail": "your.image.here",
-            "duration": "12 weeks",
-            "schedule": "Mondays and Wednesdays, 7:00 PM - 9:00 PM",
-            "location": "Online",
-            "Enrolled":false,
-            "prerequisites": ["Intermediate React Native knowledge", "Experience with mobile app development"],
-            "syllabus": [
-              {
-                "week": 1,
-                "topic": "Advanced State Management",
-                "content": "Explore advanced state management options in React Native."
-              },
-              {
-                "week": 2,
-                "topic": "Performance Optimization",
-                "content": "Optimize your React Native apps for better performance."
-              }
-            ],
-            "students": [
-              {
-                "id": 201,
-                "name": "Eve Anderson",
-                "email": "eve@example.com"
-              },
-              {
-                "id": 202,
-                "name": "Charlie Brown",
-                "email": "charlie@example.com"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "name": "React Native UI Design",
-            "instructor": "Sarah Johnson",
-            "description": "Learn how to design beautiful user interfaces for React Native apps.",
-            "enrollmentStatus": "Open",
-            "thumbnail": "your.image.here",
-            "duration": "6 weeks",
-            "schedule": "Fridays, 5:00 PM - 7:00 PM",
-            "location": "Online",
-            "Enrolled":false,
-            "prerequisites": ["Basic knowledge of React Native", "Familiarity with UI/UX design principles"],
-            "syllabus": [
-              {
-                "week": 1,
-                "topic": "Introduction to UI Design",
-                "content": "Basics of UI design principles and tools."
-              },
-              {
-                "week": 2,
-                "topic": "Layouts and Components",
-                "content": "Creating responsive layouts and custom components."
-              }
-            ],
-            "students": [
-              {
-                "id": 301,
-                "name": "Grace Wilson",
-                "email": "grace@example.com"
-              },
-              {
-                "id": 302,
-                "name": "David Lee",
-                "email": "david@example.com"
-              }
-            ]
-          }
-    ]
+          "week": 2,
+          "topic": "Building Your First App",
+          "content": "Creating a simple mobile app using React Native components."
+        }
+      ],
+      "students": [
+        {
+          "id": 101,
+          "name": "Alice Johnson",
+          "email": "alice@example.com"
+        },
+        {
+          "id": 102,
+          "name": "Bob Smith",
+          "email": "bob@example.com"
+        }
+      ],
+      "editelement": true
+    },
+    {
+      "id": 2,
+      "courseName": "Advanced React Native Techniques",
+      "instructor": "Jane Smith",
+      "description": "Master advanced techniques in React Native for building powerful mobile applications.",
+      "enrollmentStatus": "Open",
+      "thumbnail": "your.image.here",
+      "duration": "12 weeks",
+      "schedule": "Mondays and Wednesdays, 7:00 PM - 9:00 PM",
+      "location": "Online",
+      "Enrolled": false,
+      "completed": false,
+      "prerequisites": [
+        "Intermediate React Native knowledge",
+        "Experience with mobile app development"
+      ],
+      "syllabus": [
+        {
+          "week": 1,
+          "topic": "Advanced State Management",
+          "content": "Explore advanced state management options in React Native."
+        },
+        {
+          "week": 2,
+          "topic": "Performance Optimization",
+          "content": "Optimize your React Native apps for better performance."
+        }
+      ],
+      "students": [
+        {
+          "id": 201,
+          "name": "Eve Anderson",
+          "email": "eve@example.com"
+        },
+        {
+          "id": 202,
+          "name": "Charlie Brown",
+          "email": "charlie@example.com"
+        }
+      ],
+      "editelement": {
+        "Enrolled": true
+      }
+    },
+    {
+      "id": 3,
+      "courseName": "React Native UI Design",
+      "instructor": "Sarah Johnson",
+      "description": "Learn how to design beautiful user interfaces for React Native apps.",
+      "enrollmentStatus": "Open",
+      "thumbnail": "your.image.here",
+      "duration": "6 weeks",
+      "schedule": "Fridays, 5:00 PM - 7:00 PM",
+      "location": "Online",
+      "Enrolled": false,
+      "completed": false,
+      "prerequisites": [
+        "Basic knowledge of React Native",
+        "Familiarity with UI/UX design principles"
+      ],
+      "syllabus": [
+        {
+          "week": 1,
+          "topic": "Introduction to UI Design",
+          "content": "Basics of UI design principles and tools."
+        },
+        {
+          "week": 2,
+          "topic": "Layouts and Components",
+          "content": "Creating responsive layouts and custom components."
+        }
+      ],
+      "students": [
+        {
+          "id": 301,
+          "name": "Grace Wilson",
+          "email": "grace@example.com"
+        },
+        {
+          "id": 302,
+          "name": "David Lee",
+          "email": "david@example.com"
+        }
+      ]
+    }
+  ]
 }

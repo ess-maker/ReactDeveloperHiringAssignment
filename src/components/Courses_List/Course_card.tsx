@@ -9,23 +9,6 @@ const Course_card = ({
     {progress_bar?:boolean , course:courses_type}) => {
   const Navigate = useNavigate();
 
-  const handleClick = async (id: number) => {
-    try {
-      const response = await fetch(`http://localhost:3000/users/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ Enrolled: true })
-      });
-  
-      const data = await response.json();
-      console.log('Element updated:', data);
-    } catch (error) {
-      console.error('Error updating element:', error);
-    }
-  };
-
   return (
     <section
       key={course.id}
@@ -53,10 +36,10 @@ const Course_card = ({
       </div>
       <Button_click
         w_full={true}
-        value={progress_bar ? 'Complated' : "enroll"}
+        value={course.Enrolled  ? 'enrolled' : "Enroll"}
         bgcolor={"bg-blue"}
-        checkedvalue = {progress_bar ? 'Great !' : "Enrolled"} 
-        handelclick = {handleClick(course.id)}/>
+        checkedvalue = {progress_bar ? 'Great ! , you compleated this course' : "Enrolled"} 
+        />
     </section>
   )
 }

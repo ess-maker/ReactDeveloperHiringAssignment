@@ -17,16 +17,30 @@ const Enrooledcourses = () => {
     useEffect(() => {
       dispatch(fetchProducts());
     }, []);
+  const handelcompleted =  async (id:number)  => {
+    try {
+      const response = await fetch(`http://localhost:3000/courses/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ completed: true })
+      });
   
+      const data = await response.json();
+      console.log('Element updated:', data);
+      window.location.reload()
+    } catch (error) {
+      console.error('Error updating element:', error);
+    }
+
+  }
     if (loadingState) return <Loding />;
 
-    const handleClick = () => {
-        console.log('hamza');
-    }
-  return 
+  return (
+<section className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0 py-5" >
         {courses.map((course) =>
-        course.enrollmentStatus ?  
-            (
+    course.Enrolled ?  
     <section
     key={course.id}
     className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl cursor-pointer shadow-lg transform hover:scale-105 transition duration-500">
@@ -54,11 +68,16 @@ const Enrooledcourses = () => {
       w_full={true}
       value={'Complated'}
       bgcolor={"bg-blue"}
-      checkedvalue = {'Great !'} 
-      handelclick = {handleClick}/>
+      toggol={course.Enrolled}
+      completed={course.completed}
+      handelclick = {() => handelcompleted(course.id) }/>
   </section>
-        ) : false
+        : false
   )
-} }
+  
+} 
+</section>
+ )
+}
 
 export default Enrooledcourses

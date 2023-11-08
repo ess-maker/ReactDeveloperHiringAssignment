@@ -6,6 +6,7 @@ import { courses_type } from "../../../hooks/types";
 import { fetchProducts } from "../../../store/fetchproduct";
 import Button_click from "../../shered/Button_click";
 import { listOfdeatils } from "../../../content";
+import useEditjson from "../../../hooks/useEditjson";
 
 const Coursepage = () => {
   const [selected  , setselected] =useState('Description');
@@ -17,13 +18,7 @@ const Coursepage = () => {
     console.log(courses);
 
     const dispatch: AppDispatch = useDispatch();
-  
-    const [toggol, settoggol] = useState<Boolean>(false)
-
-    const handelclick = () => {
-      settoggol(true)
-    }
-    
+      
     
     useEffect(() => {
       dispatch(fetchProducts());
@@ -95,30 +90,38 @@ const Coursepage = () => {
                 className="border p-2 h-64 w-full overflow-y-auto rounded-b-xl rounded-tr-xl"
                 id="tabs-contents"
               >
-                  <p className={`${selected === item.description ? 'block' : 'hidden'}
+                  <p className={`${selected === 'Description' ? 'block' : 'hidden'}
                    text-xs text-gray-500 line-clamp-3 `}>
                    {item.description}
                   </p>
-                  <p className={`${selected === item.instructor  ? 'block' : 'hidden'}
+                  <p className={`${selected === 'instructor'  ? 'block' : 'hidden'}
                    text-xs text-gray-500 line-clamp-3 `}>
                    {item.instructor}
                   </p>
-                  <p className={`${selected === item.schedule  ? 'block' : 'hidden'}
+                  <p className={`${selected ==='schedule'  ? 'block' : 'hidden'}
                    text-xs text-gray-500 line-clamp-3 `}>
                    {item.schedule}
                   </p>
-                  <p className={`${selected === item.enrollmentStatus ? 'block' : 'hidden'}
+                  <p className={`${selected === 'enrollmentStatus' ? 'block' : 'hidden'}
                    text-xs text-gray-500 line-clamp-3 `}>
                    {item.enrollmentStatus}
                   </p>
-                  <p className={`${selected === item.duration ? 'block' : 'hidden'}
+                  <p className={`${selected === 'Course duration' ? 'block' : 'hidden'}
                    text-xs text-gray-500 line-clamp-3 `}>
                    {item.duration}
                   </p>
+                  <p className={`${selected === 'Location' ? 'block' : 'hidden'}
+                   text-xs text-gray-500 line-clamp-3 `}>
+                   {item.location}
+                  </p>
+                  <p className={`${selected === 'Schedule' ? 'block' : 'hidden'}
+                   text-xs text-gray-500 line-clamp-3 `}>
+                   {item.schedule}
+                  </p>
                   <ul 
-                  className={`${item.prerequisites.includes(selected) ? 'block' : 'hidden'}`} >
+                  className={`${selected === 'Pre-requisites' ? 'block' : 'hidden'}`} >
                     {item.prerequisites.map((requisite:string , index:number) => (
-                      <ol key={index} className="text-xs text-gray-500 line-clamp-3" > {requisite}</ol>
+                      <ol key={index} className="text-xs text-gray-500 line-clamp-3 " > {requisite}</ol>
                     ))}
                   </ul>
               </div>
@@ -126,12 +129,14 @@ const Coursepage = () => {
             <div
               className="flex justify-end items-center text-sm font-bold mt-8 gap-4"
             >
-              <Link to='/dashbord'>
-              <Button_click value={"enroll"} 
-              toggol= {toggol as boolean}
-              handelclick = {handelclick}
-              checkedvalue = {"Enrolled"} bgcolor={"bg-blue"} />
-              </Link>
+              <a href="/dashbord">
+              <Button_click
+              value={"enroll"} 
+              toggol= {item.Enrolled}
+              handelclick = {() =>
+                 {useEditjson(item.id)}}
+                bgcolor={"bg-blue"} />
+                </a>
               <Link to='/'>
               <Button_click value={"Go To Home"}  bgcolor={"bg-blue"} />
               </Link>
